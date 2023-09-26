@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyTracking.Views.ExitApprovalsPage" 
+             Title="{Binding Title}"
+             xmlns:local="clr-namespace:EasyTracking.ViewModels"  
+             xmlns:model="clr-namespace:EasyTracking.Models"  
+             x:Name="BrowseExitApprovalsPage">
+    <ContentPage.ToolbarItems>
+
+    </ContentPage.ToolbarItems>
+    <RefreshView x:DataType="local:ExitApprovalsViewModel" Command="{Binding LoadItemsCommnad}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+        <CollectionView x:Name="ExitApprovalsListView"
+                ItemsSource="{Binding Items}"
+                SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10" x:DataType="model:ExitApproval">
+                        <Label Text="{Binding Text}" 
+                            LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="16" />
+                        <Label Text="{Binding Description}" 
+                            LineBreakMode="WordWrap"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="13" />
+                        <Button Text="Göster" BackgroundColor="Gray" HeightRequest="40"
+                                     HorizontalOptions="FillAndExpand"
+                                    CommandParameter="{Binding .}" Command="{Binding Source={RelativeSource AncestorType={x:Type local:ExitApprovalsViewModel}}, Path=LoadItemCommand}" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
+</ContentPage>

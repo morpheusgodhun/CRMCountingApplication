@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EasyTracking.Views.LoginPage"
+             Shell.NavBarIsVisible="False"
+             Background="black"
+             
+    >
+    <ContentPage.Content>
+        <StackLayout Padding="40" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Entry Text="{Binding UserName}" Placeholder="Kullanıcı adı" TextColor="White" PlaceholderColor="White"/>
+            <Entry Text="{Binding Password}" Placeholder="Parola" TextColor="White" PlaceholderColor="White" IsPassword="True"/>
+
+            <Button VerticalOptions="Center" Text="Giriş" TextColor="White" 
+                    BackgroundColor="Transparent" BorderWidth="1.6" 
+                    BorderColor="White"
+                    CornerRadius="10"
+                    Command="{Binding LoginCommand}"
+                    Clicked="Loading_Clicked"
+                    />
+ 
+            <Label HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{Binding Description}" TextColor="Red"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Grid>
+                <Image Source="/Logo3.png" HorizontalOptions="Center" VerticalOptions="End" WidthRequest="150" HeightRequest="80"></Image>
+            </Grid>
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+    
+    
+    

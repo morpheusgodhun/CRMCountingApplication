@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyTracking.Views.MainPage"
+             xmlns:vm="clr-namespace:EasyTracking.ViewModels"
+             Title="{Binding Title}"             
+             BackgroundColor="#112B47">
+    <ContentPage.BindingContext>
+        <vm:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <StackLayout>
+            <Frame BackgroundColor="#112B47" Padding="24" CornerRadius="0">
+                <Label Text="ISTANBULOGISTICS GROUP" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="White" FontSize="34"/>
+            </Frame>
+
+            <Frame BackgroundColor="Turquoise" Padding="10,5" CornerRadius="5" HasShadow="True">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    <Label Text="Kullanıcı Bilgileri: " FontSize="17" TextColor="White" FontAttributes="Bold"/>
+                    <Label Text="{Binding FullName}" TextColor="White" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+            </Frame>
+
+            <Label Text="{Binding AppMessage}" TextColor="Wheat" HorizontalOptions="Center" Padding="30,0,30,0"/>
+
+            <Frame WidthRequest="170" HeightRequest="50" BackgroundColor="Turquoise" CornerRadius="25" HasShadow="False" Margin="10" HorizontalOptions="Center">
+                <StackLayout>
+                    <Button x:Name="ButtonScanDefault" Text="Scan-Barcode" Clicked="ButtonScanDefault_Clicked" BackgroundColor="Transparent"/>
+                </StackLayout>
+            </Frame>
+
+            <StackLayout Spacing="10">
+                <Frame BackgroundColor="White" Padding="10,5" CornerRadius="5" HasShadow="True">
+                    <StackLayout>
+                        <Label Text="Okunan Barkod Kod:" x:Name="BarcodeLabel" TextColor="Black" FontAttributes="Bold" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="White" Padding="10,5" CornerRadius="5" HasShadow="True">
+                    <StackLayout>
+                        <Label Text="Customer Name: " TextColor="Black" FontAttributes="Bold"/>
+                        <Label Text="{Binding CustomerName}" TextColor="Black"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="White" Padding="10,5" CornerRadius="5" HasShadow="True">
+                    <StackLayout>
+                        <Label Text="Loader Name: " TextColor="Black" FontAttributes="Bold"/>
+                        <Label Text="{Binding LoaderName}" TextColor="Black"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="White" Padding="10,5" CornerRadius="5" HasShadow="True">
+                    <StackLayout>
+                        <Label Text="Register Date: " TextColor="Black" FontAttributes="Bold"/>
+                        <Label Text="{Binding RegisterDate}" TextColor="Black"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="White" Padding="10,5" CornerRadius="5" HasShadow="True">
+                    <StackLayout>
+                        <Label Text="Summary Statement Number: " TextColor="Black" FontAttributes="Bold"/>
+                        <Label Text="{Binding SummaryStatementNumber}" TextColor="Black"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="White" Padding="10,5" CornerRadius="5" HasShadow="True">
+                    <StackLayout>
+                        <Label Text="Antrepo Number: " TextColor="Black" FontAttributes="Bold"/>
+                        <Label Text="{Binding AntrepoNumber}" TextColor="Black"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="White" Padding="10,5" CornerRadius="5" HasShadow="True">
+                    <StackLayout>
+                        <Label Text="Contain Number: " TextColor="Black" FontAttributes="Bold"/>
+                        <Label Text="{Binding ContainerNumber}" TextColor="Black"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="White" Padding="10,5" CornerRadius="5" HasShadow="True">
+                    <StackLayout>
+                        <Label Text="Goods Number: " TextColor="Black" FontAttributes="Bold"/>
+                        <Label Text="{Binding GoodsNumber}" TextColor="Black"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="White" Padding="10,5" CornerRadius="5" HasShadow="True">
+                    <StackLayout>
+                        <Label Text="Genus: " TextColor="Black" FontAttributes="Bold"/>
+                        <Label Text="{Binding Genus}" TextColor="Black"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="White" Padding="10,5" CornerRadius="5" HasShadow="True">
+                    <StackLayout>
+                        <Label Text="Weight: " TextColor="Black" FontAttributes="Bold"/>
+                        <Label Text="{Binding Weight}" TextColor="Black"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+            <Label HorizontalOptions="End" Padding="30,24,30,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="version: 1.0" FontSize="8" FontAttributes="None" TextColor="Snow"/>
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

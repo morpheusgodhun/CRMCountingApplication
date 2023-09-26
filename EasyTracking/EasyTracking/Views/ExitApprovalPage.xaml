@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyTracking.Views.ExitApprovalPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="Tesisten Çıkış Onay İşlemi"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="{Binding Text}" FontSize="Small"/>
+            <Label Text="{Binding Description}" FontSize="Small"/>
+            <Label Text="{Binding ProcessTypeName}" FontSize="Small" />
+            <Label Text="{Binding SealNumber}" FontSize="Small"/>
+            
+            <DatePicker Date="{Binding ConfirmDate, Mode=TwoWay}" />
+            <TimePicker Time="{Binding ConfirmTime, Mode=TwoWay}" />
+
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Vazgeç" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Onayla" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
